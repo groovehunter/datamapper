@@ -1,0 +1,87 @@
+
+src_keep:
+  - item-name
+  - price
+  - quantity
+  - seller-sku
+  - item-note
+  - product-id
+
+src_drop:
+  - item-description
+  - listing-id
+  - open-date
+  - image-url
+  - item-is-marketplace
+  - product-id-type
+  - zshop-shipping-fee
+  - item-condition
+  - zshop-category1
+  - zshop-browse-path
+  - zshop-storefront-feature
+  - asin1
+  - asin2
+  - asin3
+  - will-ship-internationally
+  - expedited-shipping
+  - zshop-boldface
+  - bid-for-featured-placement
+  - add-delete
+  - pending-quantity
+  - fulfillment-channel
+
+
+src2dest_map:
+  - item-name:  title
+  - price:      price_cents
+  - quantity:   quantity
+  - content:    item-note
+  - seller-sku: custom_seller_identifier
+  - item-note:  content
+  
+
+
+dest_to_fill:
+  - title
+  - categories
+  - condition
+  - condition_extra
+  - content
+  - quantity
+  - price_cents
+  - vat
+  - transport_pickup
+  - transport_type1
+  - transport_type1_provider
+  - transport_type1_price_cents
+  - transport_type1_number
+  - transport_type2_number
+
+
+dest_from_src_map:
+  - title:        item-name
+  - quantity:     quantity
+
+
+dest_fix:
+  - vat: 7
+  - transport_pickup: true
+  - transport_type1: true
+  - transport_type1_provider: Büchersendung
+  - transport_type1_price_cents:  180
+  - transport_type1_number: 1
+  - transport_type2_number: 1
+
+
+dest_calc:
+  - price_cents:  price
+  - 
+
+
+
+
+
+
+
+
+      

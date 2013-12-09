@@ -1,0 +1,12 @@
+
+src:
+  file: '/home/konnertz/projekte/fairnopoly/amazon/amazon_test.csv'
+  delim: '\t'
+
+dest:
+  file: '/home/konnertz/projekte/fairnopoly/VK/csv_upload_buecher2.csv'
+  delim: ','
+
+
+
+

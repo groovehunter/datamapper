@@ -1,0 +1,71 @@
+import yaml
+import csv
+
+class HandlerBase(object):  pass
+
+class CsvHandler(HandlerBase):
+    def __init__(self):
+        pass
+
+    def load(self):
+        csv.register_dialect('tabbed',delimiter="\t",quoting=csv.QUOTE_NONE)
+        self.data = []
+        
+        with open(self.src,'r') as f:
+            reader = csv.reader(f, 'tabbed')
+            for row in reader:
+                self.data.append(row)
+        
+    def get_header(self):
+        self.load()
+        self.fieldnames = self.data[0]
+        print self.fieldnames
+        return self.fieldnames
+
+        
+
+class DataMapper(object):
+
+
+    def __init__(self):
+        pass
+
+    def load_config(self):
+        cfgcon = file('cfg/main.yml','r').read()
+        cfg = yaml.load(cfgcon)
+        self.cfg = cfg
+
+        cfgcon = file('cfg/conf.yml','r').read()
+        self.cfg_fields = yaml.load(cfgcon)
+        #print self.cfg_fields
+
+
+    def run(self):
+        self.load_config()
+        
+        # for now
+        self.do_csv_to_csv_template()
+    
+    
+    def do_csv_to_csv_template(self):
+        self.handler1 = CsvHandler()
+        self.handler1.src = self.cfg['dest']['file']
+        self.handler1.delim = self.cfg['dest']['delim']
+        
+        dest_fieldnames = self.handler1.get_header()
+        
+        for line in self.handler1.data:
+            pass
+            
+        for fn in dest_fieldnames:
+            pass
+            
+            #if fn in 
+            
+            #self.cfg_fields['dest_to_fill']:
+        
+        
+        
+        
+        
+        
